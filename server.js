@@ -22,7 +22,7 @@ app.use((req, res, next) => {
   next();
 });
 
-//--------- NO NEXT, MEANING ALL ROUTES BELOW RENDER maintenance.hbs
+//--------- NO next(), MEANING ALL ROUTES BELOW RENDER maintenance.hbs
 // app.use((req, res, next) => {
 //   res.render("maintenance.hbs");
 // });
@@ -54,6 +54,12 @@ app.get("/", (req, res) => {
   res.render("home.hbs", {
     pageTitle: "Home Page",
     welcomeContent: "Welcome to my homepage!"
+  });
+});
+app.get("/portfolios", (req, res) => {
+  res.render("portfolios.hbs", {
+    pageTitle: "Portfolio Page",
+    portfolioContent: "This is my portfolio! Please checkout my projects!"
   });
 });
 
